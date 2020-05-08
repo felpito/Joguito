@@ -9,7 +9,7 @@ public class playerController : MonoBehaviour
     {
         print("eae jogo bosta");
     }
-
+    public bool isGrounded = false;
     public Rigidbody2D rb;
     void Update()
     {
@@ -25,7 +25,14 @@ public class playerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 5f);
+            Jump();
         }
     }
+
+    void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, 5f);
+    }
+
+   
 }
