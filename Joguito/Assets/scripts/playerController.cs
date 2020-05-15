@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class playerController : MonoBehaviour
@@ -9,23 +10,47 @@ public class playerController : MonoBehaviour
     {
         print("eae jogo bosta");
     }
-
+    public bool isGrounded = false;
     public Rigidbody2D rb;
+    public bool facingRight = true;
+
     void Update()
     {
         if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-5, rb.velocity.y);
-            transform.localScale = new Vector2(-0.05f, 0.05f);
+            FlipRight();
         }
         if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(5, rb.velocity.y);
-            transform.localScale = new Vector2(0.05f, 0.05f);
+            FlipLeft();
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 5f);
+            Jump();
+        }
+    }
+
+    void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, 5f);
+    }
+
+    void FlipRight()
+    {
+        if (facingRight == true)
+        {
+            transform.Rotate(0f, 180f, 0f);
+            facingRight = false;
+        }
+    }
+    void FlipLeft()
+    {
+        if (facingRight == false)
+        {
+            transform.Rotate(0f, 180f, 0f);
+            facingRight = true;
         }
     }
 }
