@@ -9,10 +9,11 @@ public class playerController : MonoBehaviour
     void Start()
     {
         print("eae jogo bosta");
+        rb = GetComponent<Rigidbody2D>();
     }
-    public bool isGrounded = false;
     public Rigidbody2D rb;
     public bool facingRight = true;
+    public bool isGrounded = true;
 
     void Update()
     {
@@ -26,9 +27,26 @@ public class playerController : MonoBehaviour
             rb.velocity = new Vector2(5, rb.velocity.y);
             FlipLeft();
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded == true)
         {
             Jump();
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            isGrounded = false;
         }
     }
 

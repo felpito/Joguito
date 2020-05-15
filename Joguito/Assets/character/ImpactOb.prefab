@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8366498945866712022}
   - component: {fileID: 7736123699557479039}
   - component: {fileID: 8113488906024031386}
+  - component: {fileID: 8188035098260982527}
   m_Layer: 0
   m_Name: ImpactOb
-  m_TagString: Untagged
+  m_TagString: Impact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,3 +131,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8188035098260982527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3936716062413749877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92479fa89e8d4344a8d3e678d8c86e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -17,6 +17,10 @@ public class Bullet : MonoBehaviour
 	{
 		rbb.velocity = transform.right * speed;
 	}
+	void OnBecameInvisible()
+	{
+		Destroy(gameObject);
+	}
 	void OnTriggerEnter2D(Collider2D hitInfo)
 	{
 
