@@ -7,6 +7,10 @@ TagManager:
   - ground
   - Backgorund
   - Impact
+  - Coin
+  - Spike
+  - Chest
+  - FireBall
   layers:
   - Default
   - TransparentFX
